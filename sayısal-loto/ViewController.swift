@@ -25,8 +25,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         labels = [numberLabel1, numberLabel2, numberLabel3, numberLabel4, numberLabel5, numberLabel6]
         
-        setupUI() // Tasarımı uygula
-        startNumberAnimation() // İlk açılışta animasyon çalıştır
+        setupUI()
+        startNumberAnimation()
     }
 
     @IBAction func generateButtonTapped(_ sender: UIButton) {
@@ -35,14 +35,14 @@ class ViewController: UIViewController {
     
     func startNumberAnimation() {
         elapsedTime = 0.0
-        timer?.invalidate() // Önceki timer varsa durdur
+        timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
             self.elapsedTime += 0.1
-            self.updateRandomNumbers() // Hızlıca değişen sayılar
+            self.updateRandomNumbers()
 
-            if self.elapsedTime >= 3.0 { // 3 saniye dolunca
+            if self.elapsedTime >= 3.0 {
                 timer.invalidate()
-                self.generateFinalNumbers() // Son sayıları belirle
+                self.generateFinalNumbers() 
             }
         }
     }
