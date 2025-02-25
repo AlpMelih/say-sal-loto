@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     
     func updateRandomNumbers() {
         for label in labels {
-            label.text = "\(Int.random(in: 1...100))"
+            label.text = "\(Int.random(in: 1...49))"
         }
     }
     
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     func generateUniqueNumbers() -> [Int] {
         var numbersSet = Set<Int>()
         while numbersSet.count < 6 {
-            let randomNumber = Int.random(in: 1...100)
+            let randomNumber = Int.random(in: 1...49)
             numbersSet.insert(randomNumber)
         }
         return Array(numbersSet).sorted()
